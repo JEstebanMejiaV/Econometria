@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "\n\nDatosKielMC <- get(load(\"C:/Users/admin/Desktop/GitHub/Econometria/Wooldridge.Into.Econometria/Data/R data sets for 5e/kielmc.RData\"))\n\n\nDatosKielMC <- subset(data, data$year == '1981')\n\n\nModelo6.1.1 <- lm(log(price)~log(dist), data = DatosKielMC)\n\nsummary(Modelo6.1.1)\n\n\nModelo6.1.2 <- lm(log(price) ~ log(dist) + log(intst) + log(area)\n                   + log(land) + rooms + baths + age, data = DatosKielMC)\n\nsummary(Modelo6.1.2)\n\nModelo6.1.3 <- lm(log(price) ~ log(dist) + log(intst) + I(log(intst)^2) + log(area)\n                  + log(land) + rooms + baths + age, data = DatosKielMC)\n\nsummary(Modelo6.1.3)\n\nModelo6.1.4 <- lm(log(price) ~ log(dist) + I(log(dist)^2)  + log(intst) \n                  + I(log(intst)^2) + log(area)+ log(land) + rooms \n                  + baths + age, data = DatosKielMC)\n\nsummary(Modelo6.1.4)\n\n## C6.2\n\nDatosWage1 <- get(load(\"C:/Users/admin/Desktop/GitHub/Econometria/Wooldridge.Into.Econometria/Data/R data sets for 5e/wage1.RData\"))\n\nModelo6.2.1 <- lm(log(wage) ~ educ + exper + I(exper^2), data = DatosWage1)\n\nsummary(Modelo6.2.1)\n\ncoef(Modelo6.2.1)[3]\n\nOpt2 <- abs(coef(Modelo6.2.1)[3])/abs(2*coef(Modelo6.2.1)[4])\n\nOpt2\n\n\n## C6.3\n\nModelo6.3.1 <- lm(log(wage) ~ educ + exper + educ:exper, data = DatosWage1)\n\nsummary(Modelo6.3.1)\n\nDatosWage2 <- get(load(\"C:/Users/admin/Desktop/GitHub/Econometria/Wooldridge.Into.Econometria/Data/R data sets for 5e/wage2.RData\"))\n\n\nModelo6.3.3 <- lm(log(wage) ~ educ + exper + educ:exper, data = DatosWage2)\n\nsummary(Modelo6.3.3)\n\n## C6.4\n\n\nDatosGPA2 <- get(load(\"C:/Users/admin/Desktop/GitHub/Econometria/Wooldridge.Into.Econometria/Data/R data sets for 5e/gpa2.RData\"))\n\n\nModelo6.4.1 <- lm( sat ~ hsize + I(hsize^2), data = DatosGPA2)\n\nsummary(Modelo6.4.1)\n\nOpt4 <- abs(coef(Modelo6.4.1)[2])/abs(2*coef(Modelo6.4.1)[3])\n\nOpt4\n\n\nModelo6.4.4 <- lm( log(sat) ~ hsize + I(hsize^2), data = DatosGPA2)\n\nsummary(Modelo6.4.4)\n\nOpt4.4 <- abs(coef(Modelo6.4.4)[2])/abs(2*coef(Modelo6.4.4)[3])\n\nOpt4.4",
+    "created" : 1489327952760.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2052714746",
+    "id" : "D4557360",
+    "lastKnownWriteTime" : 1489332629,
+    "last_content_update" : 1489332629069,
+    "path" : "C:/Users/admin/Desktop/GitHub/Econometria/Wooldridge.Into.Econometria/SolucionesCap6.R",
+    "project_path" : "SolucionesCap6.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
